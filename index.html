@@ -351,9 +351,11 @@ async function submitReport(){
   try {
     await fetch(WEBHOOK, {
       method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify(payload),
-      mode:'no-cors'
+      headers:{
+        'Content-Type':'application/json',
+        'Accept':'application/json'
+      },
+      body:JSON.stringify(payload)
     });
     shifts.unshift({id:shifts.length+1,fecha:fmtF,turno,operador:op,tickets_new:tn,tickets_closed:tc,incidentes:hasInc?1:0,estado,inc_desc:incDesc,pendientes:pend,clientes});
     showToast('Reporte enviado y guardado en SharePoint.');
