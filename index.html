@@ -180,7 +180,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
         <div class="sec-lbl">Datos del turno</div>
         <div class="frow">
           <div class="fg"><label class="fl">Número de turno</label><select id="f-turno"><option value="T1">Turno 1</option><option value="T2" selected>Turno 2</option><option value="T3">Turno 3</option></select></div>
-          <div class="fg"><label class="fl">Operador</label><select id="f-op"><option>Tomas Bonino</option><option>Francisco Insua</option><option>Lucas Alvarez</option><option>Manuel Rauch</option><option>Gustavo Morales</option></select></div>
+          <div class="fg"><label class="fl">Operador</label><select id="f-op"><option>Tomas Bonino</option><option>M. González</option><option>R. Pérez</option><option>C. López</option><option>A. Rodríguez</option></select></div>
         </div>
         <div class="frow">
           <div class="fg"><label class="fl">Fecha</label><input type="date" id="f-fecha"></div>
@@ -241,7 +241,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
         <div class="card-hdr">
           <span class="card-title">Registro de turnos</span>
           <div class="fr">
-            <select id="f-fop" onchange="renderHistory()"><option value="">Todos los operadores</option><option>Tomas Bonino</option><option>Francisco Insua</option><option>Manuel Rauch</option><option>Lucas Alvarez</option><option>Gustavo Morales</option></select>
+            <select id="f-fop" onchange="renderHistory()"><option value="">Todos los operadores</option><option>Tomas Bonino</option><option>M. González</option><option>R. Pérez</option><option>C. López</option></select>
             <select id="f-fest" onchange="renderHistory()"><option value="">Todos los estados</option><option value="ok">Sin novedad</option><option value="inc">Con incidente</option><option value="warn">Con pendientes</option></select>
           </div>
         </div>
@@ -311,7 +311,7 @@ function pickR(el,gid,cls){
   if(gid==='inc-grp')document.getElementById('inc-detail').style.display=el.querySelector('input').value==='si'?'block':'none';
 }
 
-const WEBHOOK = 'https://default1a8d097b24de409dbc68e43dd69516.bc.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/5de11c46491a4f55ad581557a65bd007/triggers/manual/paths/invoke?api-version=1';
+const WEBHOOK = 'https://default1a8d097b24de409dbc68e43dd69516.bc.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/5de11c46491a4f55ad581557a65bd007/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=aXT42IbYag1cGvxbn8WqdssSifIONLi1LWV0AZYMYVM';
 
 async function submitReport(){
   const turno=document.getElementById('f-turno').value;
