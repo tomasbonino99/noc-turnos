@@ -333,9 +333,9 @@ async function submitReport(){
   const estado=hasInc?'inc':pend.trim()?'warn':'ok';
   const d=new Date(fecha);
   const fmtF=isNaN(d)?fecha:`${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
+  const fmtISO=isNaN(d)?fecha:`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 
-  const payload={
-    turno, operador:op, fecha:fmtF,
+    turno, operador:op, fecha:fmtISO,
     hora:document.getElementById('f-hora').value,
     incidentes:hasInc?1:0, inc_desc:incDesc,
     tickets_new:tn, tickets_closed:tc,
